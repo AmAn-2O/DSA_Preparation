@@ -6,7 +6,7 @@ int get_min(int arr[], int size)
     int mini = INT_MAX;
     for (int i = 0; i < size; i++)
     {
-       // mini=min(mini,arr[i]);
+        mini=min(mini,arr[i]);
         if (arr[i] < mini)
         {
             mini = arr[i];
@@ -19,7 +19,7 @@ int get_max(int arr[], int size)
     int maxi = INT_MIN;
     for (int i = 0; i < size; i++)
     {
-        // maxi=max(maxi,arr[i]);
+         maxi=max(maxi,arr[i]);
         if (arr[i] > maxi)
         {
             maxi = arr[i];
