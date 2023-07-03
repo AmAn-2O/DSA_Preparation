@@ -7,9 +7,7 @@ int end=size-1;
 while(start<=end){
     swap(arr[start],arr[end]);
     start++;
-    end--;
-}
-
+    end--;}
 }
 
 void input_array(int arr2[],int size2){
