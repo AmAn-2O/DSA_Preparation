@@ -33,7 +33,7 @@ int main()
     cout << "Enter the elements:";
     input_array(arr,n);
     alternate_swap(arr,n);
-    cout << "The elements you entered are:";
+    cout << "Alternate swap elements :";
     print_array(arr,n);
 
     return 0;
