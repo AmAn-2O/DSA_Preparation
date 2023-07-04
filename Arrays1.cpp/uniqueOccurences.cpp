@@ -1,27 +1,33 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int uniqueOccurence(int arr[],int size){
-    int ans=0;
-    for(int i=0;i<size;i++){
-        ans=ans^arr[i];
+bool uniqueOccurrences(vector<int>& arr) {
+        vector<int> ans;
+        int size=arr.size();
+        sort(arr.begin(),arr.end());
+        int i=0;
+        while(i<size){
+            int count=1;
+            for(int j=i+1;j<size;j++){
+                if(arr[i]==arr[j]){
+                    count++;
+                }
+                else{
+                    break;
+                }
+            }
+            ans.push_back(count);
+            i=i+count;
+        }
+        size=ans.size();
+        sort(ans.begin(),ans.end());
+        for(int i=0;i<size-1;i++){
+            if(ans[i]==ans[i+1]){
+                return false;
+            }
+        }
+        return true;
     }
-    return ans;
-}
-void unique_element(int arr[], int size){
-    for(int i=0;i<size;i++){
-        bool unique=true;
-        for(int j=0;j<size;j++){
-            if(arr[i]==arr[j] && i!=j ){
-                unique=false;
-                break;
-            }   
-    }
-    if(unique){
-        cout<<arr[i]<<" ";
-    }
-}
-}
 
 void input_array(int arr2[],int size2){
 for (int i = 0; i < size2; i++)
@@ -39,18 +45,7 @@ for (int i = 0; i < size; i++)
 
 int main()
 {
-    int n;
-    cout << "Enter the no. of elements:";
-    cin >> n;
-    int arr[100];
-    cout << "Enter the elements:";
-    input_array(arr,n);
-    cout << "unique elements are elements :";
-    unique_element(arr,n);
-    cout<<uniquelement_optimal(arr,n);
-    
-
-
-
+    vector<int> arr={-3,0,-3,1,-3,1,1,1,-3,10,0};
+   cout<< uniqueOccurrences(arr);
     return 0;
 }
