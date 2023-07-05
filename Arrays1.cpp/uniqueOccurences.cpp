@@ -2,11 +2,11 @@
 using namespace std;
 
 int uniqueOccurence(int arr[],int size){
-    int ans=0;
+    int ans1=0;
     for(int i=0;i<size;i++){
-        ans=ans^arr[i];
+        ans1=ans1^arr[i];
     }
-    return ans;
+    return ans1;
 }
 void unique_element(int arr[], int size){
     for(int i=0;i<size;i++){
